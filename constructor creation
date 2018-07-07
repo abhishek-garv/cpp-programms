@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class test
+{
+    int x,y;
+public:
+    test(int a, int b)  //creation of constructor
+    {
+        x = a;
+        y = b;
+    }
+  void display()
+  {
+      cout<<"X = "<<x;
+      cout<<"\nY = "<<y<<"\n";
+  }
+};
+int main()
+{
+    test t1(40,50);
+    test t2(60,70);
+    t1.display();
+    t2.display();
+    return 0;
+}
