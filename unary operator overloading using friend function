@@ -1,0 +1,43 @@
+//*****unary operator overloading with friend function*****
+#include<iostream>
+using namespace std;
+class test
+{
+    int x;
+    int y;
+    int z;
+    public:
+    void getin(int,int,int);
+    void display();
+    friend void operator-(test &t);
+} ;
+void test::getin(int a,int b,int c)
+{
+    x = a;
+    y = b;
+    z = c;
+}
+void test::display()
+{
+    cout<<"x: "<<x;
+    cout<<"y: "<<y;
+    cout<<"z: "<<z;
+}
+void operator-(test &t)
+{
+    t.x = -t.x;
+    t.y = -t.y;
+    t.z = -t.z;
+}
+int main()
+{
+    test t1;
+    t1.getin(10,-20,30);
+    cout<<"\nt1:   ";
+    t1.display();
+    -t1;
+    cout<<"\n-t1:   ";
+    t1.display();
+    return 0;
+}
+
