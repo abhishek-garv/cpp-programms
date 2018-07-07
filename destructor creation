@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int count;
+class test
+{
+    public:
+test(){
+    count++;
+cout<<"\nconstructor of object "<<count;
+}
+~test(){
+  cout<<"\ndestructor of object "<<count;
+  count--;
+}
+};
+int main()
+{
+    cout<<"\ninside main method";
+    test t1;
+    {
+        cout<<"\ninside block";
+        test t2,t3;
+    }
+    cout<<"\nreturn back to main function";
+    return 0;
+}
