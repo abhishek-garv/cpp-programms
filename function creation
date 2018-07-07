@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class person{
+   char name[20];
+   int age;
+
+   public:
+       void getinput(void); //declaring function
+       void display(void);//declaring function
+};
+void person::getinput(void)//function definition
+{
+   cout<<"Enter name of person\n";
+   cin>>name;
+   cout<<"Enter age of person\n";
+   cin>>age;
+}
+void person::display(void)//function definition
+{
+  cout<<"Name : "<<name<<"\n";
+  cout<<"Age : "<<age;
+}
+int main()
+{
+    person p;
+    p.getinput();//getinput function calling
+    p.display();//display function calling
+    return 0;
+}
