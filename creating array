@@ -1,0 +1,95 @@
+#include<iostream>
+using namespace std;
+class iteam{
+int count;
+  int code[10];
+  int price[10];
+public:
+    void cnt()
+    {
+        count=0;
+    }
+    void add();
+    void remove();
+    void display();
+    void update();
+};
+void iteam::add()
+{
+    cout<<"enter code of product\n";
+    cin>>code[count];
+    cout<<"enter price of product\n";
+    cin>>price[count];
+    count++;
+}
+void iteam::display()
+{
+    cout<<"  code   price\n";
+    for(int i = 0; i < count; i++)
+       cout<<"   "<<code[i]<<"     "<<price[i]<<"\n";
+}
+void iteam::remove()
+{
+    int cod;
+    cout<<"enter code of product\n";
+    cin>>cod;
+    for(int i = 0; i < count; i++)
+        if(code[i]==cod)
+    {
+        code[i]=0;
+        price[i]=0;
+    }
+}
+void iteam::update()
+{
+    int cod;
+    cout<<"enter code of product\n";
+    cin>>cod;
+    bool tr = true;
+     for(int i = 0; i < count; i++)
+        if(code[i] == cod)
+    {
+        cout<<"enter price\n";
+        cin>>price[i];
+        tr = false;
+    }
+    if(tr)
+      cout<<"enter valid code of product\n";
+}
+int main()
+{
+    int choice;
+     iteam it;
+     char dis;
+     it.cnt();
+    cout<<"============Product===========\n";
+    do{
+         cout<<"***  Enter your choice  ***\n";
+         cout<<"1. Add product in list\n";
+         cout<<"2. Display product from list\n";
+         cout<<"3. Remove product from list\n";
+         cout<<"4. Update price of product\n";
+         cin>>choice;
+        switch(choice)
+        {
+          case 1:
+              it.add();
+            break;
+          case 2:
+              it.display();
+              break;
+          case 3:
+              it.remove();
+            break;
+          case 4:
+              it.update();
+            break;
+          default:
+            cout<<"enter  valid choice\n";
+
+        }
+        cout<<"Do you want to continue yes ='Y' or not ='N'\n";
+        cin>>dis;
+    }
+    while(dis!='Y');
+}
