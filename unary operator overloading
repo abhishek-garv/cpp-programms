@@ -1,0 +1,42 @@
+//*****unary operator overloading with member function*****
+#include<iostream>
+using namespace std;
+class test
+{
+    int x;
+    int y;
+    int z;
+    public:
+    void getin(int,int,int);
+    void display();
+    void operator-();
+} ;
+void test::getin(int a,int b,int c)
+{
+    x = a;
+    y = b;
+    z = c;
+}
+void test::display()
+{
+    cout<<"x: "<<x;
+    cout<<"y: "<<y;
+    cout<<"z: "<<z;
+}
+void test::operator-()
+{
+    x = -x;
+    y = -y;
+    z = -z;
+}
+int main()
+{
+    test t1;
+    t1.getin(10,-20,30);
+    cout<<"\nt1:   ";
+    t1.display();
+    -t1;
+    cout<<"\n-t1:   ";
+    t1.display();
+    return 0;
+}
